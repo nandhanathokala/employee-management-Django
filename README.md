@@ -40,7 +40,7 @@ A Django-based web application with authentication, dashboard, and full CRUD ope
 
 3\. Run migrations:
 
-&nbsp;  ```bash
+&nbsp;  
 
 &nbsp;  python manage.py migrate
 
