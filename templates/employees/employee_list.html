@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee List</title>
+</head>
+<body>
+
+<h2>Employee List</h2>
+
+<a href="{% url 'add_employee' %}">Add New Employee</a>
+<br><br>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Department</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for emp in employees %}
+    <tr>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.phone }}</td>
+        <td>{{ emp.department.name }}</td>
+        <td>
+            <a href="{% url 'edit_employee' emp.id %}">Edit</a> |
+            <a href="{% url 'delete_employee' emp.id %}"
+               onclick="return confirm('Are you sure?')">Delete</a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="5">No employees found</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+<a href="{% url 'dashboard' %}">Back to Dashboard</a>
+
+</body>
+</html>

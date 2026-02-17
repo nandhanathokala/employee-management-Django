@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Profile</title>
+</head>
+<body>
+
+<h2>My Profile</h2>
+
+<p><b>Username:</b> {{ request.user.username }}</p>
+<p><b>Email:</b> {{ request.user.email }}</p>
+
+<br>
+<a href="{% url 'dashboard' %}">Back to Dashboard</a>
+
+</body>
+</html>

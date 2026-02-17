@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Department</title>
+</head>
+<body>
+
+<h2>Add Department</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Department Name" required><br><br>
+    <textarea name="description" placeholder="Description" required></textarea><br><br>
+    <button type="submit">Save Department</button>
+</form>
+
+<br>
+<a href="{% url 'department_list' %}">Back to Department List</a>
+
+</body>
+</html>
